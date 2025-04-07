@@ -1,9 +1,11 @@
 #!/bin/bash -l
-#SBATCH -A uppmax2025-3-3_2 -M snowy
+
+#SBATCH -A uppmax2025-3-3
+#SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 2
 #SBATCH -t 08:00:00
-#SBATCH -J canu_pacbio_assembly
+#SBATCH -J 01_pacbio_assembly
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=matthew.redmayne.0786@student.uu.se
 #SBATCH --output=%x.%j.out
@@ -22,4 +24,7 @@ canu \
   genomeSize=2.58m \
   -pacbio *.fastq.gz \
   maxThreads=2 \
+  maxMemory=16g \
+  corThreads=2 \
+  corMemory=12g \
   useGrid=false
