@@ -16,7 +16,7 @@ export WDIR="$HOME/1MB462/1MB462/analysis/02_Assembly/PacBio"
 export PBIO="$HOME/1MB462/data/raw_data/1_Zhang_2017/genomics_data/PacBio"
 
 # Run Canu (from PacBio directory)
-cd "$PBIO" || { echo "Failed to cd to $PBIO"; exit 1; }
+cd "$PBIO"
 
 canu \
   -p e_faecium \
